@@ -20,7 +20,7 @@ public class LogController {
     return logRepository.findAll();
   }
 
-  public Mono<Log> findById(Long id) {
+  public Mono<Log> findById(String id) {
     return logRepository.findById(id)
         .switchIfEmpty(Mono.error(new RuntimeException("Log not found")));
   }
@@ -33,7 +33,7 @@ public class LogController {
         .build());
   }
 
-  public Mono<Log> update(Long id, Log log) {
+  public Mono<Log> update(String id, Log log) {
     return this.findById(id)
         .flatMap(existingLog -> {
           BeanUtils.copyProperties(log, existingLog, "id");
@@ -42,7 +42,7 @@ public class LogController {
         .switchIfEmpty(Mono.error(new RuntimeException("Log not found")));
   }
 
-  public void deleteById(Long id) {
+  public void deleteById(String id) {
     logRepository.deleteById(id);
   }
 

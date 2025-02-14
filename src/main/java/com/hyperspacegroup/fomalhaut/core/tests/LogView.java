@@ -28,7 +28,7 @@ public class LogView {
   }
 
   @GetMapping("/{id}")
-  public Mono<Log> getLogById(@PathVariable Long id) {
+  public Mono<Log> getLogById(@PathVariable String id) {
     return logController.findById(id);
   }
 
@@ -38,12 +38,12 @@ public class LogView {
   }
 
   @PutMapping("/{id}")
-  public Mono<Log> createLog(@PathVariable Long id, @RequestBody Log log) {
+  public Mono<Log> createLog(@PathVariable String id, @RequestBody Log log) {
     return logController.update(id, log);
   }
 
   @DeleteMapping("/{id}")
-  public void deleteLog(@PathVariable Long id) {
+  public void deleteLog(@PathVariable String id) {
     logController.deleteById(id);
   }
 

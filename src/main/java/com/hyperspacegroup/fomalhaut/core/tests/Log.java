@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
@@ -13,9 +14,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Document(collection = "core_logs")
 public class Log {
   @Id
-  private Long id;
+  private String id;
   private String title;
   private String body;
   @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
