@@ -1,8 +1,9 @@
-package com.hyperspacegroup.fomalhaut.core.tests;
+package com.hyperspacegroup.fomalhaut.core.controller;
 
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 
+import com.hyperspacegroup.fomalhaut.core.model.Log;
+import com.hyperspacegroup.fomalhaut.core.model.dao.LogRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

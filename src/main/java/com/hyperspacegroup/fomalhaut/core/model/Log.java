@@ -1,4 +1,4 @@
-package com.hyperspacegroup.fomalhaut.core.tests;
+package com.hyperspacegroup.fomalhaut.core.model;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

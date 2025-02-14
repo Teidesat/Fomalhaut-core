@@ -1,5 +1,8 @@
-package com.hyperspacegroup.fomalhaut.core.tests;
+package com.hyperspacegroup.fomalhaut.core.view;
 
+import com.hyperspacegroup.fomalhaut.core.controller.LogController;
+import com.hyperspacegroup.fomalhaut.core.model.Log;
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
