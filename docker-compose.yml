@@ -1,11 +1,34 @@
+networks:
+  fomalhaut-network:
+    external: true
+
+volumes:
+  mongo_data:
+
 services:
-  mongo:
-    image: mongo
-    container_name: core-db-dev
+  fomalhaut-core:
+    image: maven:3.9
+    container_name: fomalhaut-core
+    hostname: fomalhaut-core
+    depends_on:
+      - fomalhaut-mongodb
+    networks:
+      - fomalhaut-network
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: mvn spring-boot:run
+
+
+  fomalhaut-mongodb:
+    image: mongo:8.0
+    container_name: fomalhaut-mongodb
+    hostname: fomalhaut-mongodb
+    networks:
+      - fomalhaut-network
     ports:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
-
-volumes:
-  mongo_data:

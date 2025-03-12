@@ -25,20 +25,20 @@ Before running the application, ensure you have installed the following:
    ```
 2. Environment variables are pre-configured in `application.properties`:
    ```properties
-   spring.data.mongodb.uri=mongodb://mongo:27017/coredev
+   spring.data.mongodb.uri=mongodb://fomalhaut-mongodb:27017/
    server.port=8081
    ```
 
 ## Running the Project
-### Start MongoDB using Docker
-To run the project with Docker:
+### Start backend and MongoDB using Docker
+To run the project with Docker simply run the following command:
 ```sh
 docker compose up
 ```
 
-### Start the backend with the embedded web server
+**Note:** The first time you may need to create the docker network to allow the backend to comunicate with the database, you can do this by running the following command:
 ```sh
-mvn spring-boot:run
+docker network create fomalhaut-core-network
 ```
 
 ## Verification
